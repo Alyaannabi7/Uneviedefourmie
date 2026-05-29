@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="324pt" height="166pt" viewBox="0.00 0.00 324.00 166.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 161.82)">
+<title>G</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-161.82 319.72,-161.82 319.72,4 -4,4"/>
+<!-- Sv -->
+<g id="node1" class="node">
+<title>Sv</title>
+<ellipse fill="lightblue" stroke="blue" cx="39.9" cy="-78.91" rx="39.9" ry="39.9"/>
+<text xml:space="preserve" text-anchor="middle" x="39.9" y="-83.11" font-family="Times,serif" font-size="14.00">Sv</text>
+<text xml:space="preserve" text-anchor="middle" x="39.9" y="-66.31" font-family="Times,serif" font-size="14.00">(Infini)</text>
+</g>
+<!-- S1 -->
+<g id="node3" class="node">
+<title>S1</title>
+<ellipse fill="none" stroke="black" cx="150.71" cy="-122.91" rx="34.91" ry="34.91"/>
+<text xml:space="preserve" text-anchor="middle" x="150.71" y="-118.71" font-family="Times,serif" font-size="14.00">S1 (1)</text>
+</g>
+<!-- Sv&#45;&#45;S1 -->
+<g id="edge1" class="edge">
+<title>Sv--S1</title>
+<path fill="none" stroke="black" d="M77.44,-93.68C90.52,-98.98 105.17,-104.9 117.83,-110.02"/>
+</g>
+<!-- S2 -->
+<g id="node4" class="node">
+<title>S2</title>
+<ellipse fill="none" stroke="black" cx="150.71" cy="-34.91" rx="34.91" ry="34.91"/>
+<text xml:space="preserve" text-anchor="middle" x="150.71" y="-30.71" font-family="Times,serif" font-size="14.00">S2 (1)</text>
+</g>
+<!-- Sv&#45;&#45;S2 -->
+<g id="edge2" class="edge">
+<title>Sv--S2</title>
+<path fill="none" stroke="black" d="M77.44,-64.14C90.52,-58.84 105.17,-52.92 117.83,-47.8"/>
+</g>
+<!-- Sd -->
+<g id="node2" class="node">
+<title>Sd</title>
+<ellipse fill="lightgreen" stroke="green" cx="268.67" cy="-78.91" rx="47.05" ry="47.05"/>
+<text xml:space="preserve" text-anchor="middle" x="268.67" y="-83.11" font-family="Times,serif" font-size="14.00">Sd</text>
+<text xml:space="preserve" text-anchor="middle" x="268.67" y="-66.31" font-family="Times,serif" font-size="14.00">(Dortoir)</text>
+</g>
+<!-- S1&#45;&#45;Sd -->
+<g id="edge3" class="edge">
+<title>S1--Sd</title>
+<path fill="none" stroke="black" d="M183.7,-110.77C196.31,-105.99 210.98,-100.42 224.49,-95.29"/>
+</g>
+<!-- S2&#45;&#45;Sd -->
+<g id="edge4" class="edge">
+<title>S2--Sd</title>
+<path fill="none" stroke="black" d="M183.7,-47.05C196.31,-51.83 210.98,-57.4 224.49,-62.53"/>
+</g>
+</g>
+</svg>

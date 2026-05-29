@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="747pt" height="408pt" viewBox="0.00 0.00 747.00 408.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 403.91)">
+<title>G</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-403.91 743,-403.91 743,4 -4,4"/>
+<!-- Sv -->
+<g id="node1" class="node">
+<title>Sv</title>
+<ellipse fill="lightblue" stroke="blue" cx="145.72" cy="-119" rx="39.9" ry="39.9"/>
+<text xml:space="preserve" text-anchor="middle" x="145.72" y="-123.2" font-family="Times,serif" font-size="14.00">Sv</text>
+<text xml:space="preserve" text-anchor="middle" x="145.72" y="-106.4" font-family="Times,serif" font-size="14.00">(Infini)</text>
+</g>
+<!-- S1 -->
+<g id="node3" class="node">
+<title>S1</title>
+<ellipse fill="none" stroke="black" cx="256.53" cy="-151" rx="34.91" ry="34.91"/>
+<text xml:space="preserve" text-anchor="middle" x="256.53" y="-146.8" font-family="Times,serif" font-size="14.00">S1 (5)</text>
+</g>
+<!-- Sv&#45;&#45;S1 -->
+<g id="edge1" class="edge">
+<title>Sv--S1</title>
+<path fill="none" stroke="black" d="M184.47,-130.1C196.87,-133.75 210.55,-137.77 222.56,-141.3"/>
+</g>
+<!-- S2 -->
+<g id="node4" class="node">
+<title>S2</title>
+<ellipse fill="none" stroke="black" cx="362.35" cy="-63" rx="34.91" ry="34.91"/>
+<text xml:space="preserve" text-anchor="middle" x="362.35" y="-58.8" font-family="Times,serif" font-size="14.00">S2 (6)</text>
+</g>
+<!-- Sv&#45;&#45;S2 -->
+<g id="edge2" class="edge">
+<title>Sv--S2</title>
+<path fill="none" stroke="black" d="M184.6,-109.12C225.27,-98.5 289.28,-81.81 328.08,-71.68"/>
+</g>
+<!-- Sd -->
+<g id="node2" class="node">
+<title>Sd</title>
+<ellipse fill="lightgreen" stroke="green" cx="691.95" cy="-226" rx="47.05" ry="47.05"/>
+<text xml:space="preserve" text-anchor="middle" x="691.95" y="-230.2" font-family="Times,serif" font-size="14.00">Sd</text>
+<text xml:space="preserve" text-anchor="middle" x="691.95" y="-213.4" font-family="Times,serif" font-size="14.00">(Dortoir)</text>
+</g>
+<!-- S6 -->
+<g id="node8" class="node">
+<title>S6</title>
+<ellipse fill="none" stroke="black" cx="362.35" cy="-239" rx="34.91" ry="34.91"/>
+<text xml:space="preserve" text-anchor="middle" x="362.35" y="-234.8" font-family="Times,serif" font-size="14.00">S6 (4)</text>
+</g>
+<!-- S1&#45;&#45;S6 -->
+<g id="edge3" class="edge">
+<title>S1--S6</title>
+<path fill="none" stroke="black" d="M283.73,-173.21C299.47,-186.55 319.42,-203.46 335.16,-216.8"/>
+</g>
+<!-- S8 -->
+<g id="node10" class="node">
+<title>S8</title>
+<ellipse fill="none" stroke="black" cx="362.35" cy="-151" rx="34.91" ry="34.91"/>
+<text xml:space="preserve" text-anchor="middle" x="362.35" y="-146.8" font-family="Times,serif" font-size="14.00">S8 (4)</text>
+</g>
+<!-- S1&#45;&#45;S8 -->
+<g id="edge4" class="edge">
+<title>S1--S8</title>
+<path fill="none" stroke="black" d="M291.81,-151C303.15,-151 315.77,-151 327.11,-151"/>
+</g>
+<!-- S7 -->
+<g id="node9" class="node">
+<title>S7</title>
+<ellipse fill="none" stroke="black" cx="468.17" cy="-151" rx="34.91" ry="34.91"/>
+<text xml:space="preserve" text-anchor="middle" x="468.17" y="-146.8" font-family="Times,serif" font-size="14.00">S7 (5)</text>
+</g>
+<!-- S2&#45;&#45;S7 -->
+<g id="edge5" class="edge">
+<title>S2--S7</title>
+<path fill="none" stroke="black" d="M389.55,-85.21C405.29,-98.55 425.24,-115.46 440.98,-128.8"/>
+</g>
+<!-- S3 -->
+<g id="node5" class="node">
+<title>S3</title>
+<ellipse fill="none" stroke="red" stroke-dasharray="5,2" cx="34.91" cy="-270" rx="34.91" ry="34.91"/>
+<text xml:space="preserve" text-anchor="middle" x="34.91" y="-265.8" font-family="Times,serif" font-size="14.00">S3 (1)</text>
+</g>
+<!-- S4 -->
+<g id="node6" class="node">
+<title>S4</title>
+<ellipse fill="none" stroke="black" cx="145.72" cy="-302" rx="34.91" ry="34.91"/>
+<text xml:space="preserve" text-anchor="middle" x="145.72" y="-297.8" font-family="Times,serif" font-size="14.00">S4 (3)</text>
+</g>
+<!-- S3&#45;&#45;S4 -->
+<g id="edge10" class="edge">
+<title>S3--S4</title>
+<path fill="none" stroke="black" d="M68.85,-279.69C82.49,-283.7 98.27,-288.34 111.89,-292.35"/>
+</g>
+<!-- S5 -->
+<g id="node7" class="node">
+<title>S5</title>
+<ellipse fill="none" stroke="black" cx="256.53" cy="-365" rx="34.91" ry="34.91"/>
+<text xml:space="preserve" text-anchor="middle" x="256.53" y="-360.8" font-family="Times,serif" font-size="14.00">S5 (2)</text>
+</g>
+<!-- S3&#45;&#45;S5 -->
+<g id="edge11" class="edge">
+<title>S3--S5</title>
+<path fill="none" stroke="black" d="M54.71,-298.96C67.14,-315.58 84.95,-335.22 105.82,-346 142.14,-364.75 189.79,-367.71 221.47,-367.15"/>
+</g>
+<!-- S3&#45;&#45;S8 -->
+<g id="edge12" class="edge">
+<title>S3--S8</title>
+<path fill="none" stroke="black" d="M69.63,-263.23C119.53,-252.52 215.36,-229.3 291.44,-195 305.95,-188.46 321.02,-179.32 333.44,-171.06"/>
+</g>
+<!-- S9 -->
+<g id="node11" class="node">
+<title>S9</title>
+<ellipse fill="none" stroke="black" cx="573.99" cy="-151" rx="34.91" ry="34.91"/>
+<text xml:space="preserve" text-anchor="middle" x="573.99" y="-146.8" font-family="Times,serif" font-size="14.00">S9 (2)</text>
+</g>
+<!-- S3&#45;&#45;S9 -->
+<g id="edge13" class="edge">
+<title>S3--S9</title>
+<path fill="none" stroke="black" d="M39.79,-235.07C46.33,-191.52 63.28,-117.08 105.82,-70 155.07,-15.5 182.08,0 255.53,0 255.53,0 255.53,0 363.35,0 446.56,0 519.25,-79.28 552.98,-122.95"/>
+</g>
+<!-- S4&#45;&#45;Sd -->
+<g id="edge14" class="edge">
+<title>S4--Sd</title>
+<path fill="none" stroke="black" d="M180.92,-302C223.27,-302 297.63,-302 361.35,-302 361.35,-302 361.35,-302 469.17,-302 535.51,-302 607.29,-271.19 650.68,-248.8"/>
+</g>
+<!-- S4&#45;&#45;S5 -->
+<g id="edge9" class="edge">
+<title>S4--S5</title>
+<path fill="none" stroke="black" d="M176.45,-319.22C191.81,-328.1 210.49,-338.92 225.83,-347.81"/>
+</g>
+<!-- S5&#45;&#45;S6 -->
+<g id="edge7" class="edge">
+<title>S5--S6</title>
+<path fill="none" stroke="black" d="M279.55,-338.28C297.17,-316.9 321.76,-287.06 339.37,-265.68"/>
+</g>
+<!-- S6&#45;&#45;S7 -->
+<g id="edge6" class="edge">
+<title>S6--S7</title>
+<path fill="none" stroke="black" d="M389.55,-216.79C405.29,-203.45 425.24,-186.54 440.98,-173.2"/>
+</g>
+<!-- S7&#45;&#45;S9 -->
+<g id="edge8" class="edge">
+<title>S7--S9</title>
+<path fill="none" stroke="black" d="M503.45,-151C514.79,-151 527.41,-151 538.75,-151"/>
+</g>
+<!-- S9&#45;&#45;Sd -->
+<g id="edge15" class="edge">
+<title>S9--Sd</title>
+<path fill="none" stroke="black" d="M603.95,-169.73C618.44,-179.1 636.19,-190.58 651.87,-200.72"/>
+</g>
+</g>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="489pt" height="141pt" viewBox="0.00 0.00 489.00 141.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 136.96)">
+<title>G</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-136.96 484.7,-136.96 484.7,4 -4,4"/>
+<!-- Sv -->
+<g id="node1" class="node">
+<title>Sv</title>
+<ellipse fill="lightblue" stroke="blue" cx="39.9" cy="-47.05" rx="39.9" ry="39.9"/>
+<text xml:space="preserve" text-anchor="middle" x="39.9" y="-51.25" font-family="Times,serif" font-size="14.00">Sv</text>
+<text xml:space="preserve" text-anchor="middle" x="39.9" y="-34.45" font-family="Times,serif" font-size="14.00">(Infini)</text>
+</g>
+<!-- S1 -->
+<g id="node3" class="node">
+<title>S1</title>
+<ellipse fill="none" stroke="black" cx="151.71" cy="-98.05" rx="34.91" ry="34.91"/>
+<text xml:space="preserve" text-anchor="middle" x="151.71" y="-93.85" font-family="Times,serif" font-size="14.00">S1 (1)</text>
+</g>
+<!-- Sv&#45;&#45;S1 -->
+<g id="edge1" class="edge">
+<title>Sv--S1</title>
+<path fill="none" stroke="black" d="M76.55,-63.61C90.46,-70.06 106.24,-77.4 119.67,-83.63"/>
+</g>
+<!-- Sd -->
+<g id="node2" class="node">
+<title>Sd</title>
+<ellipse fill="lightgreen" stroke="green" cx="433.65" cy="-47.05" rx="47.05" ry="47.05"/>
+<text xml:space="preserve" text-anchor="middle" x="433.65" y="-51.25" font-family="Times,serif" font-size="14.00">Sd</text>
+<text xml:space="preserve" text-anchor="middle" x="433.65" y="-34.45" font-family="Times,serif" font-size="14.00">(Dortoir)</text>
+</g>
+<!-- Sd&#45;&#45;Sv -->
+<g id="edge4" class="edge">
+<title>Sd--Sv</title>
+<path fill="none" stroke="red" stroke-dasharray="5,2" d="M386.4,-47.05C308.64,-47.05 153.11,-47.05 80.26,-47.05"/>
+<text xml:space="preserve" text-anchor="middle" x="233.2" y="-51.25" font-family="Times,serif" font-size="14.00"> Le Piège </text>
+</g>
+<!-- S2 -->
+<g id="node4" class="node">
+<title>S2</title>
+<ellipse fill="none" stroke="black" cx="314.69" cy="-98.05" rx="34.91" ry="34.91"/>
+<text xml:space="preserve" text-anchor="middle" x="314.69" y="-93.85" font-family="Times,serif" font-size="14.00">S2 (1)</text>
+</g>
+<!-- S1&#45;&#45;S2 -->
+<g id="edge2" class="edge">
+<title>S1--S2</title>
+<path fill="none" stroke="black" d="M186.85,-98.05C214.08,-98.05 252.03,-98.05 279.32,-98.05"/>
+</g>
+<!-- S2&#45;&#45;Sd -->
+<g id="edge3" class="edge">
+<title>S2--Sd</title>
+<path fill="none" stroke="black" d="M347.03,-84.38C360.29,-78.6 375.95,-71.77 390.22,-65.55"/>
+</g>
+</g>
+</svg>

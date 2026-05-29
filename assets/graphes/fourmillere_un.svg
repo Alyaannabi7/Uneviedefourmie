@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="430pt" height="102pt" viewBox="0.00 0.00 430.00 102.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 98.1)">
+<title>G</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-98.1 425.54,-98.1 425.54,4 -4,4"/>
+<!-- Sv -->
+<g id="node1" class="node">
+<title>Sv</title>
+<ellipse fill="lightblue" stroke="blue" cx="39.9" cy="-47.05" rx="39.9" ry="39.9"/>
+<text xml:space="preserve" text-anchor="middle" x="39.9" y="-51.25" font-family="Times,serif" font-size="14.00">Sv</text>
+<text xml:space="preserve" text-anchor="middle" x="39.9" y="-34.45" font-family="Times,serif" font-size="14.00">(Infini)</text>
+</g>
+<!-- S1 -->
+<g id="node3" class="node">
+<title>S1</title>
+<ellipse fill="none" stroke="black" cx="150.71" cy="-47.05" rx="34.91" ry="34.91"/>
+<text xml:space="preserve" text-anchor="middle" x="150.71" y="-42.85" font-family="Times,serif" font-size="14.00">S1 (1)</text>
+</g>
+<!-- Sv&#45;&#45;S1 -->
+<g id="edge1" class="edge">
+<title>Sv--S1</title>
+<path fill="none" stroke="black" d="M80.18,-47.05C91.75,-47.05 104.31,-47.05 115.53,-47.05"/>
+</g>
+<!-- Sd -->
+<g id="node2" class="node">
+<title>Sd</title>
+<ellipse fill="lightgreen" stroke="green" cx="374.49" cy="-47.05" rx="47.05" ry="47.05"/>
+<text xml:space="preserve" text-anchor="middle" x="374.49" y="-51.25" font-family="Times,serif" font-size="14.00">Sd</text>
+<text xml:space="preserve" text-anchor="middle" x="374.49" y="-34.45" font-family="Times,serif" font-size="14.00">(Dortoir)</text>
+</g>
+<!-- S2 -->
+<g id="node4" class="node">
+<title>S2</title>
+<ellipse fill="none" stroke="black" cx="256.53" cy="-47.05" rx="34.91" ry="34.91"/>
+<text xml:space="preserve" text-anchor="middle" x="256.53" y="-42.85" font-family="Times,serif" font-size="14.00">S2 (1)</text>
+</g>
+<!-- S1&#45;&#45;S2 -->
+<g id="edge2" class="edge">
+<title>S1--S2</title>
+<path fill="none" stroke="black" d="M185.99,-47.05C197.33,-47.05 209.95,-47.05 221.28,-47.05"/>
+</g>
+<!-- S2&#45;&#45;Sd -->
+<g id="edge3" class="edge">
+<title>S2--Sd</title>
+<path fill="none" stroke="black" d="M291.7,-47.05C302.79,-47.05 315.28,-47.05 327.11,-47.05"/>
+</g>
+</g>
+</svg>
