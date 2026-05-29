@@ -19,20 +19,22 @@ bool Room::is_full() {
 void Anthill::load_from_file(const string filename) {
     ifstream file(filename);
     if (!file.is_open()) {
-        cerr << "Erreur: impossible d'ouvrir " << filename << endl;
+        cerr << "Error: Could not open file " << filename << endl;
         return;
     }
 
     string line;
     int total_ants = 0;
 
-    // 1. Recherche sécurisée du nombre de fourmis
+    // 1. Secure parsing for the total number of ants
     while (getline(file, line)) {
+        // Handle format variants like "f=10" or "F = 10"
         size_t equal_pos = line.find('=');
         if (equal_pos != string::npos) {
             line = line.substr(equal_pos + 1);
         }
 
+        // Clean up hidden spaces and carriage returns
         line.erase(remove(line.begin(), line.end(), ' '), line.end());
         line.erase(remove(line.begin(), line.end(), '\r'), line.end());
         line.erase(remove(line.begin(), line.end(), '\n'), line.end());
@@ -42,17 +44,17 @@ void Anthill::load_from_file(const string filename) {
                 total_ants = stoi(line);
                 break; 
             } catch (const invalid_argument& e) {
-                continue;
+                continue; // Ignore non-numeric lines before the population count
             }
         }
     }
 
     if (total_ants <= 0) {
-        cerr << "Erreur: Nombre de fourmis invalide ou introuvable au début du fichier." << endl;
+        cerr << "Error: Invalid or missing ant population count at the beginning of the file." << endl;
         return;
     }
 
-    // Création des fourmis
+    // Initialize the ants and place them in the starting room ("Sv")
     for (int i = 1; i <= total_ants; i++) {
         Ants f;
         f.id = i;
@@ -60,24 +62,24 @@ void Anthill::load_from_file(const string filename) {
         list_ants.push_back(f);
     }
 
-    // 2. Initialisation forcée de Sv et Sd avec une capacité infinie
+    // 2. Explicitly initialize "Sv" and "Sd" with infinite capacity
     Room sv, sd;
     sv.name = "Sv"; sv.max_capacity = total_ants + 1;
     sd.name = "Sd"; sd.max_capacity = total_ants + 1;
     rooms_total["Sv"] = sv;
     rooms_total["Sd"] = sd;
 
-    // 3. Lecture du reste du fichier (Salles et Tunnels)
+    // 3. Parse the rest of the file (Rooms and Tunnels)
     while (getline(file, line)) {
         if (line.empty()) continue;
 
         size_t dash = line.find("-");
         if (dash != string::npos) {
-            // --- C'est un TUNNEL ---
+            // --- TUNNEL PARSING ---
             string roomA = line.substr(0, dash);
             string roomB = line.substr(dash + 1);
 
-            // Nettoyage strict des espaces invisibles autour des noms
+            // Clean whitespaces from room names
             roomA.erase(remove(roomA.begin(), roomA.end(), ' '), roomA.end());
             roomA.erase(remove(roomA.begin(), roomA.end(), '\r'), roomA.end());
             roomA.erase(remove(roomA.begin(), roomA.end(), '\n'), roomA.end());
@@ -86,7 +88,7 @@ void Anthill::load_from_file(const string filename) {
             roomB.erase(remove(roomB.begin(), roomB.end(), '\r'), roomB.end());
             roomB.erase(remove(roomB.begin(), roomB.end(), '\n'), roomB.end());
 
-            // Sécurité : Si une pièce du tunnel n'a pas été déclarée avant, on la crée
+            // Safeguard: If a room in a tunnel wasn't declared yet, create it with default capacity (1)
             if (rooms_total.find(roomA) == rooms_total.end()) {
                 Room r; r.name = roomA; r.max_capacity = 1;
                 rooms_total[roomA] = r;
@@ -96,16 +98,16 @@ void Anthill::load_from_file(const string filename) {
                 rooms_total[roomB] = r;
             }
 
-            // Ajout des voisins réciproques
+            // Establish bidirectional edge connections
             rooms_total[roomA].tunnels_near.push_back(roomB);
             rooms_total[roomB].tunnels_near.push_back(roomA);
 
         } else {
-            // --- C'est une SALLE ---
+            // --- ROOM PARSING ---
             size_t open  = line.find("{");
             size_t close = line.find("}");
             string name;
-            int capacity = 1;
+            int capacity = 1; // Default capacity as per project specifications
 
             if (open != string::npos) {
                 name = line.substr(0, open);
@@ -114,7 +116,7 @@ void Anthill::load_from_file(const string filename) {
                 name = line;
             }
 
-            // Nettoyage du nom de la salle
+            // Clean whitespaces from the room name
             name.erase(remove(name.begin(), name.end(), ' '), name.end());
             name.erase(remove(name.begin(), name.end(), '\r'), name.end());
             name.erase(remove(name.begin(), name.end(), '\n'), name.end());
@@ -129,10 +131,9 @@ void Anthill::load_from_file(const string filename) {
     }
 }
 
-    // Le reste de la fonction (Initialisation de Sv, Sd et boucle while) reste EXACTEMENT LE MÊME...
-
-// BFS depuis Sd pour avoir la distance de chaque salle vers Sd
+// Breadth-First Search (BFS) starting from "Sd" to map the shortest path scores
 void Anthill::bfs_algo() {
+    // Initialize all distances to -1 (unvisited/unreachable status)
     for (auto& p : rooms_total) distances[p.first] = -1;
 
     queue<string> q;
@@ -142,6 +143,7 @@ void Anthill::bfs_algo() {
     while (!q.empty()) {
         string cur = q.front(); q.pop();
         for (const string& nb : rooms_total[cur].tunnels_near) {
+            // If the neighbor hasn't been visited yet, assign its distance score
             if (distances[nb] == -1) {
                 distances[nb] = distances[cur] + 1;
                 q.push(nb);
@@ -149,16 +151,18 @@ void Anthill::bfs_algo() {
         }
     }
 }
+
+// Main Simulation Engine handling synchronous ant traffic flow
 void Anthill::simulate() {
-    // Placer toutes les fourmis initialement dans Sv
+    // Put all ants inside the starting Vestibule ("Sv")
     for (Ants& a : list_ants) {
         rooms_total["Sv"].current_ants.push_back(&a);
     }
 
-    int turn_count = 1; // Compteur pour les étapes +++ E +++
+    int turn_count = 1; // Tracks simulation cycles for output formatting
 
     while (true) {
-        // Vérifier si toutes les fourmis sont arrivées
+        // Global termination check: verify if the whole colony has reached "Sd"
         bool all_done = true;
         for (Ants& a : list_ants) {
             if (a.current_room != "Sd") { 
@@ -166,11 +170,11 @@ void Anthill::simulate() {
                 break; 
             }
         }
-        if (all_done) break;
+        if (all_done) break; // Exit main loop if everyone is safe
 
         bool moved = false;
         
-        // Structure temporaire pour stocker les mouvements du tour
+        // Temporary structure to stack up valid routing intents for the current cycle
         struct Movement {
             Ants* ant;
             string from;
@@ -178,31 +182,35 @@ void Anthill::simulate() {
         };
         vector<Movement> movements_this_turn;
 
-        // Map temporaire pour suivre l'occupation
+        // Track virtual traffic occupancy during decision-making to prevent overcrowding
         map<string, int> temporary_occupancy;
         for (auto const& [name, room] : rooms_total) {
             temporary_occupancy[name] = room.current_ants.size();
         }
 
+        // Compute pathfinding strategies for each ant
         for (Ants& a : list_ants) {
-            if (a.current_room == "Sd") continue;
+            if (a.current_room == "Sd") continue; // Skip ants that already reached destination
 
             string cur = a.current_room;
             int dist_cur = distances[cur];
             string best = "";
 
+            // Evaluate adjacent tunnels
             for (const string& nb : rooms_total[cur].tunnels_near) {
-                if (distances[nb] == -1) continue;
-                if (distances[nb] >= dist_cur) continue; 
+                if (distances[nb] == -1) continue; // Skip dead ends/unreachable rooms
+                if (distances[nb] >= dist_cur) continue; // Route constraint: must get closer to target
 
+                // Capacity constraint check: verify if target room has an available slot
                 bool ok = (nb == "Sd") || (temporary_occupancy[nb] < rooms_total[nb].max_capacity);
 
                 if (ok) { 
                     best = nb; 
-                    break; 
+                    break; // Optimal path choice found for this turn, look no further
                 }
             }
 
+            // Log movement intention if a valid destination room is cleared
             if (!best.empty()) {
                 movements_this_turn.push_back({&a, cur, best});
                 temporary_occupancy[cur]--;
@@ -210,24 +218,24 @@ void Anthill::simulate() {
             }
         }
 
-        // --- AFFICHAGE STRICT DU TOUR SELON LE SUJET ---
+        // --- SYNCHRONOUS ROUTING EXECUTION AND OUTPUT DISPLAY ---
         if (!movements_this_turn.empty()) {
-            // Affichage de la balise du tour (ex: +++ E +++ \n 1)
+            // Print out current turn header as requested by project standard format
             cout << "+++ E +++\n" << turn_count << "\n";
             
-            // On applique et on affiche chaque mouvement
+            // Commit all safe routing moves calculated during this step
             for (const Movement& m : movements_this_turn) {
-                // 1. On l'enlève de l'ancienne pièce
+                // 1. Remove ant pointer from its previous room
                 auto& vec_from = rooms_total[m.from].current_ants;
                 vec_from.erase(remove(vec_from.begin(), vec_from.end(), m.ant), vec_from.end());
 
-                // 2. On la met dans la nouvelle
+                // 2. Relocate ant structure properties to the destination room
                 m.ant->current_room = m.to;
                 if (m.to != "Sd") {
                     rooms_total[m.to].current_ants.push_back(m.ant);
                 }
 
-                // 3. Affichage au format exact : f[id] - [from] - [to]
+                // 3. Print out structural shift using project specifications: f[id] - [from] - [to]
                 cout << "f" << m.ant->id << " - " << m.from << " - " << m.to << "\n";
                 moved = true;
             }
@@ -235,7 +243,7 @@ void Anthill::simulate() {
         }
 
         if (!moved) {
-            break; // Sécurité anti-blocage
+            break; // Anti-deadlock safety trigger to prevent freezing if no paths can evolve
         }
     }
 }
